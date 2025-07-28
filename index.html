@@ -1,0 +1,624 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Eureka Polychem PVT LTD</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="img/logoim.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- AOS Library CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+</head>
+
+<body>
+  
+  <header class="navbar">
+    <div class="logo">
+      <img src="img/logo.avif" alt="Eureka Logo" />
+      <!-- <h1>Eureka Polychem PVT LTD</h1> -->
+    </div>
+  
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">Products &#9662;</a> 
+        <ul class="dropdown-menu" id="dropdownMenu">
+          <li><a href="#">Masterbatches</a></li>
+          <li><a href="#">Additive Masterbatch</a></li>
+          <li><a href="#">Colour Masterbatch</a></li>
+          <li><a href="#">Special effective Masterbatch</a></li>
+          <li><a href="#">White Masterbatch</a></li>
+          <li><a href="#">Black Masterbatch</a></li>
+          <li><a href="#">FR Masterbatch</a></li>
+          <li><a href="#">UV Masterbatch</a></li>
+          <li><a href="#">Metallic Masterbatch</a></li>
+          <li><a href="#">MFI Booster</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Clients</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </header>
+
+  
+
+<!-- Hero Section -->
+    
+<div class="fusn-bt-hero">
+  <div class="slides">
+    <div class="slide"><img src="img/ban1.avif" alt="Slide 1"></div>
+    <div class="slide"><img src="img/ban2.avif" alt="Slide 2"></div>
+    <div class="slide"><img src="img/ban3.avif" alt="Slide 3"></div>
+  </div>
+  <button class="prev">&#10094;</button>
+  <button class="next">&#10095;</button>
+  <div class="dots">
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+</div>
+
+<style>
+.fusn-bt-hero {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  
+}
+.fusn-bt-hero .slides {
+  display: flex;
+  transition: transform 0.8s ease-in-out;
+}
+.fusn-bt-hero .slide {
+  min-width: 100%;
+}
+
+
+.fusn-bt-hero img {
+  width: 100%;
+  display: block;
+  /* margin-top: 70px; */
+  height: auto; /* Default for mobile */
+}
+
+
+
+
+
+.fusn-bt-hero .prev,
+.fusn-bt-hero .next {
+  position: absolute;
+  top: 60%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0);
+  color: white;
+  border: none;
+  /* padding: 10px; */
+  cursor: pointer;
+  border-radius: 50%;
+}
+.fusn-bt-hero .prev { left: 10px; }
+.fusn-bt-hero .next { right: 10px; }
+.fusn-bt-hero .dots {
+  text-align: center;
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+}
+.fusn-bt-hero .dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.fusn-bt-hero .dot.active {
+  background: #fff;
+}
+</style>
+
+
+
+<script>
+(function() {
+  const slider = document.querySelector('.fusn-bt-hero');
+  const slides = slider.querySelectorAll('.slide');
+  const dots = slider.querySelectorAll('.dot');
+  const slidesContainer = slider.querySelector('.slides');
+  let currentIndex = 0;
+  let autoSlideInterval;
+
+  function showSlide(index) {
+    if (index >= slides.length) { index = 0; }
+    if (index < 0) { index = slides.length - 1; }
+    slidesContainer.style.transform = 'translateX(' + (-index * 100) + '%)';
+    dots.forEach(dot => dot.classList.remove('active'));
+    dots[index].classList.add('active');
+    currentIndex = index;
+  }
+
+  function startAutoSlide() {
+    clearInterval(autoSlideInterval);
+    autoSlideInterval = setInterval(() => {
+      showSlide(currentIndex + 1);
+    }, 3500);
+  }
+
+  function userSlide(nextIndex) {
+    showSlide(nextIndex);
+    startAutoSlide(); // Reset timer
+  }
+
+  slider.querySelector('.next').addEventListener('click', () => {
+    userSlide(currentIndex + 1);
+  });
+
+  slider.querySelector('.prev').addEventListener('click', () => {
+    userSlide(currentIndex - 1);
+  });
+
+  dots.forEach((dot, idx) => {
+    dot.addEventListener('click', () => userSlide(idx));
+  });
+
+  showSlide(currentIndex);
+  startAutoSlide(); // Start the auto-slide on load
+})();
+</script>
+
+
+<section class="about-alok-section" data-aos="fade-up">
+  <div class="about-alok-container">
+    <div class="about-alok-text" data-aos="fade-right">
+      <h3 class="section-subheading">
+        All About <span class="highlight">Eureka</span> Polychem PVT. LTD.
+      </h3>
+      <h2>
+        We make <span class="highlight-orange">plastics safer,</span> sustainable<br>and affordable
+      </h2>
+      <p>
+        Eureka Polychem PVT LTD is a leading masterbatch provider, co-creating innovative, reliable and responsible
+        applications for the plastic industry. Over the last few years we have put innovation and
+        sustainability at the core of our existence. Today, with an amalgamation of research,
+        first class manufacturing processes and an experienced team, we deliver high quality,
+        consistent and cost effective solutions to cater to the current and future needs of our
+        customers for both standard and speciality solutions.
+      </p>
+      <a href="#" class="btn-orange">Find out more</a>
+    </div>
+
+    <!-- RIGHT: Image -->
+    <div class="about-alok-image" data-aos="fade-left">
+      <img src="img/iso-certification.avif" alt="Color Granules" />
+    </div>
+  </div>
+
+
+</section>
+
+  <!-- ===================== -->
+<section class="white-masterbatch-section" data-aos="fade-up">
+  <div class="white-masterbatch-container">
+
+    <!-- LEFT SIDE: Images -->
+    <div class="wm-images" data-aos="zoom-in">
+      <div class="main-img">
+        <img src="img/who1.jpeg" alt="White Granules" />
+      </div>
+      <div class="circle-img-group">
+        <img src="img/who1.jpeg" class="circle" alt="White Bottle" />
+        <img src="img/orange.jpg" class="circle" alt="Granules" />
+        <img src="img/white.jpg" class="circle" alt="Plastic Jar" />
+        <img src="img/green.jpg" class="circle" alt="Plastic Jar" />
+        <img src="img/blue.jpg" class="circle" alt="Plastic Jar" />
+        <img src="img/pink.jpg" class="circle" alt="Plastic Jar" />
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE: Text -->
+    <div class="wm-content" data-aos="fade-left">
+      <h2>Color<br><span class="highlight-orange">MASTERBATCH</span></h2>
+      
+      <p>Color Masterbatch is a concentrated blend of pigments or dyes in a carrier resin, designed to provide vibrant, consistent coloration across a wide range of plastic applications such as extrusion, injection molding, film blowing, and lamination. Our formulations ensure excellent dispersion, thermal stability, and minimal impact on the base polymer’s mechanical properties.
+      </p>
+      <p>Ideal for packaging, consumer goods, textiles, and industrial components, our Color Masterbatch delivers uniform color, superior visual appeal, and long-lasting colorfastness.
+      </p>
+      <a href="#" class="btn-orange">Explore More</a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ===================================== -->
+<section class="eureka-products">
+  <h2 class="eureka-title">Our Products</h2>
+  <div class="eureka-grid">
+
+    <div class="eureka-card pink">
+      <img src="img/color-masterbatch.avif" alt="Color Masterbatch" />
+      <h4>COLOR MASTERBATCH</h4>
+      <p>With more than 5000 ready-to-use colors in our database, we are the industry leader in color masterbatches.</p>
+      <a href="#" class="eureka-btn">Read More →</a>
+    </div>
+
+    <div class="eureka-card violet">
+      <img src="img/special-effect-masterbatch.jpg" alt="Special Effect Masterbatch" />
+      <h4>SPECIAL EFFECT MASTERBATCH</h4>
+      <p>Highly effective and well appreciated among manufacturers of consumer items with a diverse range of
+        applications.</p>
+      <a href="#" class="eureka-btn">Read More →</a>
+    </div>
+
+    <div class="eureka-card yellow">
+      <img src="img/white-masterbatch-2.jpg" alt="White Masterbatch" />
+      <h4>WHITE MASTERBATCH</h4>
+      <p>Get unparalleled quality for all your applications ranging from conventional injection molding to multi-layer
+        film.</p>
+      <a href="#" class="eureka-btn">Read More →</a>
+    </div>
+
+    <div class="eureka-card orange">
+      <img src="img/black.png" alt="Black Masterbatch" />
+      <h4>BLACK MASTERBATCH</h4>
+      <p>Manufactured with the regulatory standard range based on all types of polymers used in the plastics industry.
+      </p>
+      <a href="#" class="eureka-btn">Read More →</a>
+    </div>
+
+    <div class="eureka-card green">
+      <img src="img/additive-masterbatches.webp" alt="Additive Masterbatch" />
+      <h4>ADDITIVE MASTERBATCH</h4>
+      <p>Now choose from a variety of additive masterbatches to enhance the functionality of your plastic products.</p>
+      <a href="#" class="eureka-btn">Read More →</a>
+    </div>
+
+    <div class="eureka-card teal">
+      <img src="img/pet-masterbatches.jpg" alt="PET Masterbatch" />
+      <h4>PET MASTERBATCH</h4>
+      <p>Being one of our most renowned products, PET Masterbatch has gained us the recognition to be global leader.</p>
+      <a href="#" class="eureka-btn">Read More →</a>
+    </div>
+
+    <div class="eureka-card lime">
+      <img src="img/mono-masterbatch.jpg" alt="Mono Masterbatch" />
+      <h4>MONO MASTERBATCH</h4>
+      <p>Mono Masterbatches are popular for their outstanding color strength and remarkable batch-to-batch consistency.
+      </p>
+      <a href="#" class="eureka-btn">Read More →</a>
+    </div>
+
+    <div class="eureka-card cyan">
+      <img src="img/metallic-master.jpeg" alt="Polymer Based Masterbatch" />
+      <h4>METALLIC MASTERBATCHES</h4>
+      <p>Reinforces plastics and stabilizes polyolefins so that they sustain their strength and aesthetic appeal even in
+        the most intense sunlight.</p>
+      <a href="#" class="eureka-btn">Read More →</a>
+    </div>
+
+  </div>
+</section>
+<!-- ==================================== -->
+<!-- INDUSTRIES SECTION -->
+<section class="industries-section">
+  <h2 class="industries-heading" data-aos="fade-up">INDUSTRIES WE CATER TO</h2>
+  <div class="industries-grid">
+
+
+    
+    <div class="industry-card dark-pink" data-aos="fade-up" data-aos-delay="200">
+      <img src="img/pet-bottle.jpg" alt="PET Bottle">
+      <p>| PET Bottle</p>
+    </div>
+
+    <div class="industry-card orange" data-aos="fade-up" data-aos-delay="300">
+      <img src="img/household1.png" alt="Household">
+      <p>| Household</p>
+    </div>
+
+    
+    <div class="industry-card green" data-aos="fade-up" data-aos-delay="500">
+      <img src="img/packaging.jpg" alt="Packaging">
+      <p>| Packaging</p>
+    </div>
+
+    <div class="industry-card pink" data-aos="fade-up" data-aos-delay="600">
+      <img src="img/plastic-toy.jpg" alt="Toys">
+      <p>| Toys</p>
+    </div>
+
+    <div class="industry-card purple" data-aos="fade-up" data-aos-delay="700">
+      <img src="img/car-rear-door-250x250.webp" alt="Automotive">
+      <p>| Automotive</p>
+    </div>
+
+    <div class="industry-card orange" data-aos="fade-up" data-aos-delay="800">
+      <img src="img/pharma-plastic-bottle-658.jpg" alt="Medical">
+      <p>| Pharmacuitical industries </p>
+    </div>
+
+    <div class="industry-card yellow" data-aos="fade-up" data-aos-delay="900">
+      <img src="img/furniture.jpg" alt="Furniture">
+      <p>| Furniture</p>
+    </div>
+
+    <div class="industry-card green" data-aos="fade-up" data-aos-delay="1000">
+      <img src="img/water-pipe-tank.png" alt="Pipe & Water Tank">
+      <p>| Pipe & Water Tanks</p>
+    </div>
+
+    <div class="industry-card pink" data-aos="fade-up" data-aos-delay="1100">
+      <img src="img/electrical-wiring-components-and-accessories.jpg" alt="Construction">
+      <p>| Electrical items</p>
+    </div>
+
+    <div class="industry-card purple" data-aos="fade-up" data-aos-delay="1200">
+      <img src="img/cosmatic-plastic.jpeg" alt="Agriculture">
+      <p>| Cosmatic industries</p>
+      </p>
+    </div>
+<!-- Industry Card 1 -->
+
+
+
+
+  </div>
+</section>
+<!-- =================== -->
+<!-- PlastIndia 2023 Section -->
+<!-- EUREAKA SECTION -->
+<section class="eureaka-section">
+  <div class="container">
+    <h2 data-aos="fade-up">Our Team at<br>Eureka Polychem PVT LTD 2020</h2>
+
+    <div class="event-content">
+
+   
+      
+
+        <!-- <img src="img/logoim.png" alt="Eureka Polychem PVT LTD Logo"> -->
+      </div>
+
+      <div class="video-gallery" data-aos="fade-left" data-aos-delay="200">
+        <div class="event-video">
+          <video controls poster="img/v1.jpg">
+            <source src="img/1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="event-video">
+          <video controls poster="img/v2.jpg">
+            <source src="img/2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================ -->
+<section class="why-section">
+  <!-- Left: Rotating Circle -->
+  <div class="left-circle" data-aos="fade-right">
+    <div class="circle-wrapper">
+      <div class="rotating-circle">
+        <!-- Images in Circle -->
+        <img src="img/orange.jpg" class="circle-item" style="--i:0">
+        <img src="img/white.jpg" class="circle-item" style="--i:1">
+        <img src="img/green.jpg" class="circle-item" style="--i:2">
+        <img src="img/blue.jpg" class="circle-item" style="--i:3">
+        <img src="img/pink.jpg" class="circle-item" style="--i:4">
+        <img src="img/orange.jpg" class="circle-item" style="--i:5">
+        <img src="img/white.jpg" class="circle-item" style="--i:6">
+        <img src="img/green.jpg" class="circle-item" style="--i:7">
+
+        <!-- Center Image -->
+        <div class="center-img">
+          <img src="img/center.jpg" alt="Center Image">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right: Text Content -->
+  <div class="right-content" data-aos="fade-left">
+    <h2>Why You Choose Us</h2>
+   
+    
+
+    <div class="features">
+      <div class="feature"><i class="fas fa-flask"></i><span>Advanced Formulations</span></div>
+      <div class="feature"><i class="fas fa-award"></i><span>Trusted Quality</span></div>
+      <div class="feature"><i class="fas fa-users-cog"></i><span>Expert R&D Team</span></div>
+      <div class="feature"><i class="fas fa-truck"></i><span>Reliable Supply Chain</span></div>
+    </div>
+  </div>
+</section>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<!-- ================================ -->
+<section class="contact-section" data-aos="fade-up">
+  <div class="contact-overlay">
+    <div class="contact-container">
+
+      <!-- Contact Info -->
+      <div class="contact-info" data-aos="fade-right">
+        <h5>CONTACT US</h5>
+        <h2>Get in Touch</h2>
+        <p>If you have any questions or need more information, please feel free to contact us.</p>
+
+        <div class="contact-details">
+          <p><i class="fas fa-map-marker-alt"></i>HI-71, Sector 3, Dsiidc, Industrial Estate, Bawana,Delhi - 110039, India</p>
+          <p><i class="fas fa-phone-alt"></i> +91 9310508169</p>
+          <p><i class="fas fa-phone-alt"></i> +91 8383987702</p>
+          <p><i class="fas fa-envelope"></i> info@eurekapolychem.com</p>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form" data-aos="fade-left">
+        <h4><i class="fas fa-paper-plane"></i> Send Us a Message</h4>
+        <form>
+          <div class="form-row">
+            <input type="text" placeholder="First Name" required>
+            <input type="text" placeholder="Last Name" required>
+          </div>
+          <input type="email" placeholder="Your Email" required>
+          <select>
+            <option value="">Select a Service</option>
+            <option value="general">General Inquiry</option>
+            <option value="support">Customer Support</option>
+            <option value="sales">Sales</option>
+          </select>
+          <textarea rows="4" placeholder="Your Message" required></textarea>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+  
+
+
+
+
+<!-- ======================== -->
+<footer class="eureka-footer" data-aos="fade-up">
+  <div class="footer-container">
+
+    <!-- Logo + About -->
+    <div class="footer-about" data-aos="fade-right">
+      <img src="img/logo.avif" alt="Eureka Logo" class="footer-logo">
+      <p>Leading Color Masterbatch Manufacturer in India – Trusted for Quality & Service Excellence.
+We are committed to delivering premium-grade products backed by responsive support and customer satisfaction.</p>
+    </div>
+
+    <!-- Products -->
+    <div class="footer-column" data-aos="zoom-in">
+      <h4>Products</h4>
+      <ul>
+          <li><a href="#">Masterbatches</a></li>
+          <li><a href="#">Additive Masterbatch</a></li>
+          <li><a href="#">Colour Masterbatch</a></li>
+          <li><a href="#">Special effective Masterbatch</a></li>
+          <li><a href="#">White Masterbatch</a></li>
+          <li><a href="#">Black Masterbatch</a></li>
+          <li><a href="#">FR Masterbatch</a></li>
+          <li><a href="#">UV Masterbatch</a></li>
+          <li><a href="#">Metallic Masterbatch</a></li>
+          <li><a href="#">MFI Booster</a></li>
+      </ul>
+    </div>
+
+    <!-- Company -->
+    <div class="footer-column" data-aos="zoom-in" data-aos-delay="100">
+      <h4>Quick Links</h4>
+      <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact Us</a></li>
+        <!-- <li>Blogs</li> -->
+        <!-- <li>Privacy Policy</li> -->
+      </ul>
+    </div>
+
+    <!-- Contact Us -->
+    <div class="footer-column" data-aos="zoom-in" data-aos-delay="200">
+      <h4>Contact Us</h4>
+      <ul class="contact-list">
+        <li>
+          <i class="fas fa-map-marker-alt"></i>
+        HI-71, Sector 3, Dsiidc, Industrial Estate, Bawana, Delhi - 110039, India</li>
+        <li>
+          <i class="fas fa-phone-alt"></i> +91 9310508169, +91 8383987702
+        </li>
+        <li>
+          <i class="fas fa-envelope"></i> info@eurekapolychem.com
+        </li>
+      </ul>
+      <div class="about-alok-image" data-aos="fade-left">
+      <img src="img/rohs3.jpg" alt="Color Granules" />
+    </div>
+    </div>
+
+  </div>
+</footer>
+
+<!-- Footer Bottom -->
+<div class="footer-bottom" data-aos="fade-up" data-aos-delay="300">
+  <p>© 2025 Eureka Polychem PVT. LTD. All Rights Reserved.<br>
+  Designed & Managed by 
+  <a href="https://www.prompact.com" style="color: inherit; text-decoration: none;">Prompact Marketing Pvt. Ltd.</a>
+</p>
+
+  <!-- <p>© 2025 Eureka Polychem PVT. LTD. All Rights Reserved.<br>
+  Designed & Managed by Prompact Marketing pvt.Ltd</p> -->
+  <br>
+</div>
+<!-- AOS Script -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true
+  });
+</script>
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  const dropdownToggle = document.querySelector('.dropdown-toggle');
+  const dropdownMenu = document.getElementById('dropdownMenu');
+
+  // Hamburger toggle
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    dropdownMenu.classList.remove('show-dropdown'); // close dropdown if open
+  });
+
+  // Dropdown toggle
+  dropdownToggle.addEventListener('click', (e) => {
+    e.preventDefault();
+    dropdownMenu.classList.toggle('show-dropdown');
+  });
+
+  // Close dropdown on outside click
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.dropdown')) {
+      dropdownMenu.classList.remove('show-dropdown');
+    }
+  });
+
+</script>
+</body>
+</html>
